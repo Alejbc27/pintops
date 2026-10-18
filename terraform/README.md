@@ -96,7 +96,7 @@ mkdir -p ../.secrets
 - `terraform.tfvars`, `.terraform/`, `*.tfstate*`, `*.tfplan`, `.secrets/` y
   `*-sa.json` están ignorados por Git.
 - Con `create_sa_key = false` (default) ninguna clave privada se gestiona ni
-  almacena en Terraform: es el modo recomendado para esta prueba/sandbox.
+  almacena en Terraform: es el modo recomendado para este proyecto/sandbox.
 - Con `create_sa_key = true`, `google_service_account_key.private_key` queda
   guardada en el state remoto. Por eso el bucket GCS del state debe tratarse
   como sensible.

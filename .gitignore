@@ -14,7 +14,7 @@ Thumbs.db
 # ---------------------------------------------------------------
 .atl/
 
-# Enunciado recibido por correo; se conserva localmente, no se publica.
+# Documento de requisitos del ejercicio; se conserva localmente, no se publica.
 Prueba Tecnica.pdf
 
 
@@ -124,7 +124,7 @@ logs/
 *.swo
 
 # ---------------------------------------------------------------
-# Datos locales (no versionar datos reales de la prueba)
+# Datos locales (no versionar datos reales del proyecto)
 # ---------------------------------------------------------------
 data/raw/
 data/processed/

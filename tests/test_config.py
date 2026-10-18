@@ -137,7 +137,7 @@ class TestSettingsBigQuery:
 
 
 class TestSettingsMaxRecords:
-    """Límite configurable de registros a descargar (ajuste de enunciado)."""
+    """Límite configurable de registros a descargar."""
 
     def test_default_es_100_cuando_ausente(self, monkeypatch):
         # Por defecto, la descarga se limita a 100 registros para no consumir

@@ -2,7 +2,7 @@
 
 Estos tests NO aplican Terraform contra GCP (no hay credenciales en CI).
 Verifican que la configuración HCL exista y cumpla los requisitos de
-infraestructura Terraform y el contrato de la prueba:
+infraestructura Terraform y el contrato del proyecto:
 
 - estructura de archivos esperada en ``terraform/`` y sus módulos
 - versiones pinadas (terraform, google, local)

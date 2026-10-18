@@ -16,7 +16,7 @@ from airflow.operators.empty import EmptyOperator
 
 # DummyOperator se eliminó en Airflow 2.7+. ``EmptyOperator`` es el operador
 # no-op canónico de Airflow 2.x; se aliasa como ``DummyOperator`` para honrar la
-# nomenclatura del enunciado y mantener la legibilidad del flujo.
+# nomenclatura y mantener la legibilidad del flujo.
 DummyOperator = EmptyOperator
 
 # Hook: código que usa una Connection (credenciales) almacenada en Airflow.
@@ -45,7 +45,7 @@ class TimeDiff(BaseOperator):
         )
 
 
-# default_args exactos exigidos por el enunciado.
+# default_args exigidos por el diseño del DAG.
 default_args = {
     "owner": "airflow",
     "depends_on_past": False,
@@ -71,7 +71,7 @@ with DAG(
     time_diff = TimeDiff(task_id="time_diff", diff_date="2024-01-01")
     end = DummyOperator(task_id="end")
 
-    # Dependencias par/impar del enunciado, por niveles:
+    # Dependencias par/impar acordadas, por niveles:
     #   start -> impares -> pares -> time_diff -> end
     # más la arista directa start -> end (al final).
     #
@@ -92,5 +92,5 @@ with DAG(
     even_tasks >> time_diff
     time_diff >> end
 
-    # Arista directa start -> end exigida por el enunciado, paralela al flujo.
+    # Arista directa start -> end exigida por el diseño, paralela al flujo.
     start >> end

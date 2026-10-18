@@ -26,7 +26,7 @@ class Settings:
     api_timeout_seconds: float = 30
     api_max_retries: int = 3
     # Límite de registros a descargar. Por defecto 100 para no consumir toda
-    # la API en la ejecución normal de la prueba. ``None`` (o 0 en la variable
+    # la API en la ejecución normal. ``None`` (o 0 en la variable
     # de entorno) significa descargar todo. Los valores negativos son inválidos.
     api_max_records: int | None = 100
 
@@ -67,7 +67,7 @@ class Settings:
 def _parse_max_records(raw: str | None) -> int | None:
     """Interpreta ``API_MAX_RECORDS``.
 
-    - Ausente o vacío → 100 (default razonable para la prueba).
+    - Ausente o vacío → 100 (default razonable).
     - ``0`` → ``None`` (descargar todo).
     - Entero positivo → ese valor.
     - Entero negativo → error de configuración.

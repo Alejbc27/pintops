@@ -43,7 +43,7 @@ def test_archivo_existe_y_no_esta_vacio(transform_sql: str) -> None:
 
 
 def test_una_sola_sentencia_create_or_replace(transform_sql: str) -> None:
-    # El enunciado exige una única consulta SQL.
+    # Se exige una única consulta SQL.
     sin_comentarios = _strip_comments(transform_sql)
     # Aceptamos 0 o 1 punto y coma final, pero no múltiples sentencias.
     puntos_y_coma = sin_comentarios.count(";")

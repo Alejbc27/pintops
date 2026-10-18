@@ -4,7 +4,7 @@ Estrategia en dos capas, alineada con `tests/test_transform_sql.py`:
 
 1. **Tests estáticos (siempre se ejecutan, sin Airflow instalado)**: verifican
    que los archivos de producción existen y contienen los tokens contractuales
-   derivados del enunciado de la prueba (``dag_id``, schedule cron,
+   derivados de los requisitos del ejercicio (``dag_id``, schedule cron,
    ``default_args`` exactos, ``TimeDiff``, comentario Hook vs Connection,
    servicios del compose, montaje de ``dags/`` y ausencia de secretos GCP).
 
@@ -61,7 +61,7 @@ def test_compose_existe_y_no_esta_vacio(compose_source: str) -> None:
 
 
 def test_compose_define_webserver_y_scheduler(compose_source: str) -> None:
-    # El enunciado exige explícitamente ambos servicios visibles.
+    # Los requisitos exigen explícitamente ambos servicios visibles.
     assert "webserver" in compose_source, "Falta el servicio 'webserver'"
     assert "scheduler" in compose_source, "Falta el servicio 'scheduler'"
 
@@ -110,7 +110,7 @@ def test_dag_existe_y_no_esta_vacio(dag_source: str) -> None:
 
 
 def test_dag_id_es_test(dag_source: str) -> None:
-    # El enunciado fija el identificador del DAG.
+    # Los requisitos fijan el identificador del DAG.
     assert 'dag_id="test"' in dag_source or "dag_id='test'" in dag_source
 
 
@@ -125,7 +125,7 @@ def test_dag_catchup_false(dag_source: str) -> None:
 
 
 def test_dag_default_args_exactos(dag_source: str) -> None:
-    # El enunciado fija los default_args y exige coincidencia exacta.
+    # Los requisitos fijan los default_args y exigen coincidencia exacta.
     # Se normalizan las comillas para no acoplarse al estilo de formato (ruff).
     src = dag_source.replace("'", '"')
     for token in (
@@ -145,7 +145,7 @@ def test_dag_define_time_diff_operator(dag_source: str) -> None:
 
 
 def test_dag_contiene_comentario_hook_vs_connection(dag_source: str) -> None:
-    # El enunciado pide un comentario sobre Hook vs Connection. En el DAG queda
+    # Se pide un comentario sobre Hook vs Connection. En el DAG queda
     # un comentario breve; la explicación detallada vive en el doc (ver test de
     # doc). Aquí validamos que el comentario mencione ambos conceptos y enlace.
     texto = dag_source.lower()
@@ -171,7 +171,7 @@ def test_doc_hooks_vs_connections_existe_y_explica() -> None:
 
 def test_dag_usa_empty_operator_con_alias_dummy(dag_source: str) -> None:
     # Airflow 2.x: EmptyOperator es el reemplazo de DummyOperator (eliminado en
-    # 2.7+). El alias mantiene la intención del enunciado por compatibilidad.
+    # 2.7+). El alias mantiene la intención original por compatibilidad.
     assert "EmptyOperator" in dag_source
     assert "DummyOperator" in dag_source
 

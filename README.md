@@ -1,6 +1,6 @@
 # PintOps
 
-> Pipeline de datos para la **prueba técnica de Alten** (perfil Data Engineer).
+> Ingesta de una API pública, carga cruda en BigQuery, transformación con SQL idempotente e infraestructura como código.
 
 Con el Mundial, todos van al bar — y las cervecerías se preparan: más stock,
 más pedidos, más datos. **PintOps** es un pipeline que alimenta un catálogo vivo
@@ -147,7 +147,7 @@ La razón es de seguridad: cualquier `apply` contra infraestructura real queda c
 ## Estructura del repositorio
 
 ```
-alten-case/
+pintops/
 ├── src/alten_pipeline/    # Pipeline Python: api_client, bq_uploader, config, main
 ├── tests/                 # pytest (tests estructurales de Terraform incluidos)
 ├── sql/transform.sql      # Transformación idempotente raw → integration
@@ -160,6 +160,6 @@ alten-case/
 
 ## Recursos
 
-- **Repositorio:** https://github.com/Alejbc27/alten-case
+- **Repositorio:** https://github.com/Alejbc27/pintops
 - **API:** https://www.openbrewerydb.org/
 - **Detalles de Terraform y CI:** [`terraform/README.md`](terraform/README.md) y [`.github/workflows/ci.yml`](.github/workflows/ci.yml)

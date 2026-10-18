@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "alten-pipeline"
 version = "0.1.0"
-description = "Pipeline de datos para la prueba técnica de Alten (Data Engineer)."
+description = "Ingesta de una API pública, carga cruda en BigQuery y transformación con SQL idempotente."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "Propietario - uso evaluativo" }
@@ -40,7 +40,7 @@ dev = [
 ]
 
 [project.urls]
-Repository = "https://github.com/Alejbc27/alten-case"
+Repository = "https://github.com/Alejbc27/pintops"
 
 # ---------------------------------------------------------------
 # Configuración del paquete (src layout)

@@ -1,4 +1,4 @@
-"""DAG `test` (parte 3 - Prueba Técnica Alten).
+"""DAG `test` (ejercicio de orquestación con Airflow).
 
 DAG diario (03:00 UTC, cron ``0 3 * * *``) con tareas no-op, dependencias
 par/impar y un operador personalizado ``TimeDiff`` que loguea la diferencia
@@ -60,7 +60,7 @@ with DAG(
     schedule="0 3 * * *",
     default_args=default_args,
     catchup=False,
-    tags=["alten", "test"],
+    tags=["pintops", "test"],
     doc_md=__doc__,
 ) as dag:
     start = DummyOperator(task_id="start")

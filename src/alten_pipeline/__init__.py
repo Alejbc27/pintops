@@ -1,4 +1,4 @@
-"""Paquete de la pipeline de datos para la prueba técnica de Alten.
+"""Paquete de la pipeline de datos: ingesta, carga y transformación.
 
 Expone los componentes públicos del pipeline de ingesta Open Brewery DB →
 BigQuery: configuración, cliente de descarga y cargador de BigQuery.

@@ -1,6 +1,6 @@
 # Terraform — BigQuery y cuenta de servicio
 
-Infraestructura mínima para la prueba técnica: crea los datasets y tablas de
+Infraestructura mínima del pipeline: crea los datasets y tablas de
 BigQuery, una cuenta de servicio con permisos mínimos y una clave JSON local para
 usar con `GOOGLE_APPLICATION_CREDENTIALS`.
 
